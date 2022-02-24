@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dashboard.css">
+
+
+    <!-- Fontfaces CSS -->
+    <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all"> -->
+
+    <!-- Vendor CSS -->
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" type="text/css" href="wowjs/css/libs/animate.css">
+
+    <!-- Main CSS -->
+    <link href="css/theme.css" rel="stylesheet" media="all">
+    <script type="text/javascript" src="wowjs/wow.min.js"></script>
+
+
+    <script>
+        new WOW().init();
+    </script>
+    <style>
+        body {
+            background-image: url(/images/Cinemas-featured-image.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100vh;
+        }
+        
+        table {
+            padding: 20px;
+            background-color: rgba(53, 51, 51, 0.8);
+            background-repeat: no-repeat;
+            background-size: cover;
+            box-shadow: 2px 5px 10px black;
+            border: none;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        td {
+            color: rgb(224, 222, 222);
+            align-items: center;
+            border: none;
+            padding: 20px 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fa fa-user-circle" aria-hidden="true"></i></span>
+                        <span class="title"><h2 style="color: #fff;">Admin Profile</h2></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="dashboard.html">
+                        <span class="icon"><i class="fa fa-home" aria-hidden="true"></i></span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="staff_registration.html">
+                        <span class="icon"><i class="fa fa-registered" aria-hidden="true"></i></span>
+                        <span class="title">Staff Registration</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="staff_list.html">
+                        <span class="icon"><i class="fa fa-users" aria-hidden="true"></i></span>
+                        <span class="title">Staff List</span>
+                    </a>
+                </li>
+                <li style="background-color: #03a9f4;">
+                    <a href="customer_list.html">
+                        <span class="icon"><i class="fa fa-users" aria-hidden="true"></i></span>
+                        <span class="title">Customers List</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="hall_details.html">
+                        <span class="icon"><i class="fa fa-hospital-symbol" aria-hidden="true"></i></span>
+                        <span class="title">Hall Details</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fa fa-cog" aria-hidden="true"></i></span>
+                        <span class="title">Setting</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fa fa-sign-out-alt" aria-hidden="true"></i></span>
+                        <span class="title">Sign-out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle" onclick="toggleMenu()"></div>
+                <div class="search">
+                    <label>
+                        <input type="text" name="" placeholder="Search here" id="">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </label>
+                </div>
+                <div class="user">
+                    <img src="/437_1597513704465 (2).jpg" alt="This is the Image">
+                </div>
+            </div>
+
+            <center style="margin-top: 50px;">
+                <table align="center" border="1px" width="80%">
+                    <tr>
+                        <td>S/N</td>
+                        <td>SURNAME</td>
+                        <td>FIRST NAME</td>
+                        <td>EMAIL</td>
+                        <td>PHONE NUMBER</td>
+                    </tr>
+                    <tbody id="bod">
+
+                    </tbody>
+                </table>
+            </center>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        var b = '';
+        if (window.localStorage.registeredHumans) {
+            jUser = localStorage.getItem("registeredHumans");
+            customer = JSON.parse(jUser)
+
+            for (let i = 0; i < customer.length; i++) {
+                b += "<tr><td>" + [i + 1] + "</td><td>" + customer[i].
+                SURNAME + "</td><td>" + customer[i].FIRST_NAME + "</td><td>" + customer[i].EMAIL_ADDRESS + "</td><td>" + customer[i].PHONE_NUMBER + "</td></tr>";
+            }
+            bod.innerHTML = b;
+        }
+    </script>
+</body>
+
+</html>

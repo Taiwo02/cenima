@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* background-color: #384A62; */
+    padding: 20px 0px;
+    background-image: url(/images/Cinemas-featured-image.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+form {
+    width: 500px;
+    background-color: rgba(241, 238, 238, 0.5);
+    margin: auto;
+    padding: 20px;
+    box-shadow: 2px 5px 10px black;
+    /* position: relative; */
+}
+
+h3 {
+    font-size: 20px;
+    font-family: sans-serif;
+    color: rgb(63, 63, 63);
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 18px;
+    font-family: sans-serif;
+}
+
+.input {
+    /* background-color: transparent; */
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* justify-content: space-between; */
+}
+
+input,
+select,
+button {
+    color: rgb(63, 63, 63);
+    background-color: rgb(241, 238, 238);
+    border-radius: 5px;
+    height: 30px;
+    flex: auto;
+    border: 1px solid grey;
+    outline: none;
+    padding-left: 10px;
+}
+
+button {
+    background-color: rgb(7, 153, 92);
+    color: white;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+.terms {
+    font-size: 16px;
+    font-family: sans-serif;
+    margin-top: 20px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+a {
+    background-color: white;
+    color: rgb(7, 153, 92);
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dashboard.css">
+
+    <!-- Fontfaces CSS-->
+    <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <!-- <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all"> -->
+
+    <!-- Vendor CSS-->
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" type="text/css" href="wowjs/css/libs/animate.css">
+
+
+
+
+    <!-- Main CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all">
+    <script type="text/javascript" src="wowjs/wow.min.js"></script>
+
+
+    <script>
+        new WOW().init();
+    </script>
+
+
+    <style>
+        .lab {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
+            font-size: 20px;
+        }
+        
+        .inp {
+            height: 25px;
+            width: 200px;
+            border-radius: 8px;
+            padding-left: 10px;
+            font-size: 20px;
+            border: 1px solid #03a9f4;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        
+        button {
+            background: green;
+            color: white;
+            padding: 5px 10px;
+            font-size: 17px;
+            border-radius: 5px 0 0 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fa fa-user-circle" aria-hidden="true"></i></span>
+                        <span class="title"><h2 style="color: #fff;">Admin Profile</h2></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="dashboard.html">
+                        <span class="icon"><i class="fa fa-home" aria-hidden="true"></i></span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="staff_registration.html">
+                        <span class="icon"><i class="fa fa-registered" aria-hidden="true"></i></span>
+                        <span class="title">Staff Registration</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="staff_list.html">
+                        <span class="icon"><i class="fa fa-users" aria-hidden="true"></i></span>
+                        <span class="title">Staff List</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="customer_list.html">
+                        <span class="icon"><i class="fa fa-users" aria-hidden="true"></i></span>
+                        <span class="title">Customers List</span>
+                    </a>
+                </li>
+                <li style="background-color: #03a9f4;">
+                    <a href="hall_details.html">
+                        <span class="icon"><i class="fa fa-hospital-symbol" aria-hidden="true"></i></span>
+                        <span class="title">Hall Details</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fa fa-cog" aria-hidden="true"></i></span>
+                        <span class="title">Setting</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fa fa-sign-out-alt" aria-hidden="true"></i></span>
+                        <span class="title">Sign-out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle" onclick="toggleMenu()"></div>
+                <div class="search">
+                    <label>
+                        <input type="text" name="" placeholder="Search here" id="">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </label>
+                </div>
+                <div class="user">
+                    <img src="/437_1597513704465 (2).jpg" alt="This is the Image">
+                </div>
+            </div>
+
+
+
+            <center style="margin-top: 30px;">
+                <label for="" class="lab">No of chairs demanded : </label><input type="text" name="" id="demanded" class="inp">
+                <label for="" class="lab">Price of the chairs : </label><input type="text" name="" id="price" class="inp"><br><br>
+                <div style="display: flex; justify-content: center;">
+                    <button onclick="send()">Send</button><input type="text" name="" id="n" placeholder="send chairs" class="inp" style="border-radius: 0 8px 8px 0; height: 30px;">
+                </div>
+            </center>
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+    <script>
+        var requested = JSON.parse(localStorage.demand);
+        demanded.value = requested.Want;
+        price.value = requested.Price;
+
+        send = () => {
+            var b = n.value;
+            localStorage.noOfchairs = b;
+            location.reload();
+        }
+    </script>
+</body>
+
+</html>

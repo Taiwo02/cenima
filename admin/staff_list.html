@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <!-- Fontfaces CSS -->
+    <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all"> -->
+
+    <!-- Vendor CSS -->
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" type="text/css" href="wowjs/css/libs/animate.css">
+
+    <!-- Main CSS -->
+    <link href="css/theme.css" rel="stylesheet" media="all">
+    <script type="text/javascript" src="wowjs/wow.min.js"></script>
+
+
+    <script>
+        new WOW().init();
+    </script>
+
+    <style>
+        body {
+            background-image: url(/images/Cinemas-featured-image.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100vh;
+        }
+        
+        #table {
+            padding: 50px;
+            background-color: rgba(20, 19, 19, 0.8);
+            box-shadow: 2px 5px 10px black;
+            border: none;
+            display: none;
+        }
+        
+        #table td {
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        #table input,
+        #table select {
+            color: white;
+            background-color: transparent;
+        }
+        
+        #table button {
+            background-color: rgb(7, 153, 92);
+            color: white;
+            padding: 8px 14px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+
+
+    <style>
+        body {
+            background-image: url(/images/Cinemas-featured-image.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100vh;
+        }
+        
+        #tab {
+            /* margin-top: 40px; */
+            padding: 20px;
+            /* background-image: url(/images/admission.jpg); */
+            background-color: rgba(53, 51, 51, 0.8);
+            background-repeat: no-repeat;
+            background-size: cover;
+            box-shadow: 2px 5px 10px black;
+            border: none;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        #tab td,
+        #tab button {
+            color: rgb(224, 222, 222);
+            align-items: center;
+            border: none;
+            padding: 20px 10px;
+            text-align: center;
+        }
+        
+        .fa-pencil-alt {
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fa fa-user-circle" aria-hidden="true"></i></span>
+                        <span class="title"><h2 style="color: #fff;">Admin Profile</h2></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="dashboard.html">
+                        <span class="icon"><i class="fa fa-home" aria-hidden="true"></i></span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="staff_registration.html">
+                        <span class="icon"><i class="fa fa-registered" aria-hidden="true"></i></span>
+                        <span class="title">Staff Registration</span>
+                    </a>
+                </li>
+                <li style="background-color: #03a9f4;">
+                    <a href="staff_list.html">
+                        <span class="icon"><i class="fa fa-users" aria-hidden="true"></i></span>
+                        <span class="title">Staff List</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="customer_list.html">
+                        <span class="icon"><i class="fa fa-users" aria-hidden="true"></i></span>
+                        <span class="title">Customers List</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="hall_details.html">
+                        <span class="icon"><i class="fa fa-hospital-symbol" aria-hidden="true"></i></span>
+                        <span class="title">Hall Details</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fa fa-cog" aria-hidden="true"></i></span>
+                        <span class="title">Setting</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fa fa-sign-out-alt" aria-hidden="true"></i></span>
+                        <span class="title">Sign-out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle" onclick="toggleMenu()"></div>
+                <div class="search">
+                    <label>
+                        <input type="text" name="" placeholder="Search here" id="">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </label>
+                </div>
+                <div class="user">
+                    <img src="/437_1597513704465 (2).jpg" alt="This is the Image">
+                </div>
+            </div>
+
+
+            <center style="margin-top: 50px;">
+                <table align="center" border="1px" width="50%" id="table">
+
+
+
+                    <tr>
+                        <td>Surname :</td>
+                        <td> <input type="text" name="" id="name1" placeholder="Enter your Surname" style="width: 100%;"></td>
+                    </tr>
+                    <tr>
+                        <td>First Name :</td>
+                        <td> <input type="text" name="" id="name2" placeholder="Enter your First Name" style="width: 100%;"></td>
+                    </tr>
+                    <tr>
+                        <td>Second Name :</td>
+                        <td> <input type="text" name="" id="name3" placeholder="Enter your Second Name" style="width: 100%;"></td>
+                    </tr>
+                    <tr>
+                        <td>Username :</td>
+                        <td> <input type="text" name="" id="name4" placeholder="Enter your Username" style="width: 100%;"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Phone Number :</td>
+                        <td> <input type="number" name="" id="number" placeholder="Enter your phone number" style="width: 100%;"></td>
+                    </tr>
+                    <tr>
+                        <td>Email Address :</td>
+                        <td> <input type="email" name="" id="email" placeholder="Enter your email" style="width: 100%;"></td>
+                    </tr>
+                    <tr>
+                        <td>Password :</td>
+                        <td>
+                            <input type="password" id="pword" placeholder="Enter your password" style="width: 100%;">
+                        </td>
+                    </tr>
+                    <tr align="center">
+                        <td colspan="2"><button onclick="save()">Save</button></td>
+                    </tr>
+
+                    <div class="response"></div>
+                </table>
+            </center>
+
+
+
+            <center style="margin-top: 50px;">
+                <table align="center" border="1" width="80%" id="tab">
+                    <tr>
+                        <td align="center">S/N</td>
+                        <td align="center">FIRST NAME</td>
+                        <td align="center">SECOND NAME</td>
+                        <td align="center">PHONE NUMBER</td>
+                        <td align="center">EMAIL</td>
+                        <td align="center">EDIT</td>
+                        <td align="center">DELETE</td>
+                    </tr>
+
+                    <tbody id="l">
+
+                    </tbody>
+                </table>
+            </center>
+
+        </div>
+    </div>
+
+
+
+
+    <script>
+        var b = '';
+        if (window.localStorage.lTUser) {
+            staffs = JSON.parse(localStorage.lTUser);
+            for (i = 0; i < staffs.length; i++) {
+
+                b += `<tr><td> ${i+1} </td><td> ${staffs[i].SURNAME} </td><td> ${staffs[i].FIRST_NAME} </td><td> ${staffs[i].PHONE_NUMBER} </td><td> ${staffs[i].EMAIL_ADDRESS} </td><td align="center "><a href="#"><i class="fa fa-pencil-alt text-success" onclick="edit(${i})"></i></a></td><td align="center"><i class="fa fa-trash-alt bg-danger text-white btn" onclick="del(${i})"></i></td></tr>`;
+            }
+            document.getElementById('l').innerHTML = b;
+        }
+        del = (d) => {
+            if (confirm("Are you sure?")) {
+                staffs = JSON.parse(localStorage.lTUser);
+                staffs.splice(d, 1)
+                localStorage.lTUser = JSON.stringify(staffs)
+            }
+            location.reload();
+        }
+
+        edit = (e) => {
+            document.getElementById("tab").style = "display:none;"
+            document.getElementById("table").style = "display:block;"
+            staffs = JSON.parse(localStorage.lTUser);
+            name1.value = staffs[e].SURNAME;
+            name2.value = staffs[e].FIRST_NAME;
+            name3.value = staffs[e].SECOND_NAME;
+            name4.value = staffs[e].USERNAME;
+            number.value = staffs[e].PHONE_NUMBER;
+            email.value = staffs[e].EMAIL_ADDRESS;
+            pword.value = staffs[e].PASSWORD;
+        }
+
+        save = () => {
+            // submit = JSON.parse(window.localStorage.getItem("lTUser"));
+            for (let i = 0; i < staffs.length; i++) {
+                var myIndex = i
+                staffs.splice(myIndex, 1, {
+                    SURNAME: name1.value,
+                    FIRST_NAME: name2.value,
+                    SECOND_NAME: name3.value,
+                    USERNAME: name4.value,
+                    PHONE_NUMBER: number.value,
+                    EMAIL_ADDRESS: email.value,
+                    PASSWORD: pword.value,
+                });
+                result = JSON.stringify(staffs);
+                window.localStorage.setItem("lTUser", result);
+                // console.log(staffs);
+                // staffs = JSON.parse(localStorage.lTUser);
+                // for (let i = 0; i < staffs.length; i++) {
+
+
+                // }
+                // // }
+                // localStorage.setItem("lTUser", JSON.stringify(staffs))
+
+
+                document.getElementById("tab").style = "display:block;"
+                document.getElementById("table").style = "display:none;"
+                location.reload();
+
+            }
+        }
+    </script>
+</body>
+
+
+</html>

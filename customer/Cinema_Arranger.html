@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-image: url(/images/premiere-people-go-cinema-modern-cinema_86390-1985.jpg);
+            background-repeat: no-repeat;
+            /* background-position: center; */
+            background-size: cover;
+            padding-top: 40px;
+        }
+        
+        label {
+            color: white;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
+            font-size: 20px;
+        }
+        
+        input {
+            height: 30px;
+            width: 250px;
+            border-radius: 8px;
+            padding-left: 10px;
+            font-size: 20px;
+            border: 1px solid #03a9f4;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        
+        button {
+            background: green;
+            color: white;
+            padding: 5px 10px;
+            font-size: 15px;
+            border-radius: 5px;
+            border: none;
+        }
+    </style>
+</head>
+
+
+
+<body>
+
+    <center>
+        <button onclick="request()">Request for chairs</button>
+        <input type="text" name="" onkeyup="convert()" id="want" placeholder="No of chairs you want">
+        <label for="">Price:</label>
+        <input type="text" name="" id="price" placeholder="one chair is #800"><br><br>
+        <label for="">Chairs sent:</label>
+        <input type="text" name="" id="num" placeholder="No of chairs sent" value="0">
+        <button onclick="chairarranger()">Arrange Chairs</button>
+        <input type="text" name="" id="row" placeholder="Number of Chairs per row">
+    </center><br><br>
+
+    <!-- <table id="hall"></table> -->
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        function convert() {
+            price.value = "#" + (want.value * 800);
+        }
+
+
+
+        request = () => {
+            var chairWant = {
+                Want: want.value,
+                Price: price.value,
+            }
+            localStorage.demand = JSON.stringify(chairWant);
+            location.reload();
+        }
+
+
+
+        var noOfChair = 0;
+        var noPerRow = 0;
+        var chair;
+        var cArranged;
+
+        num.value = localStorage.noOfchairs;
+
+
+        let chairses = []
+
+        function chairarranger() {
+            noOfChair = num.value;
+            noPerRow = row.value;
+            // cArranged = 0;
+            // chair = '<tr>';
+            // for (let i = 0; i < noOfChair; i++) {
+            //     chair += `<td><span>No ${i+1}</span><button onclick="book(${i})"><img id="mark" src="/images/red+cinema+chair.png" alt="" width="200" height="250"></button></td>`;
+            //     cArranged++;
+            //     if (cArranged == noPerRow) {
+            //         chair += '</tr><tr>';
+            //         cArranged = 0;
+            //     }
+
+            // }
+            // chair += '</tr>';
+
+            // chr = chair;
+            // localStorage.setItem("storeChair", JSON.stringify(chr));
+              for (let index = 0; index < noOfChair; index++) {
+                chairses.push(
+                    {
+                        id: index+1,
+                        user_id:""
+                    }
+                )
+                  
+              }
+            localStorage.setItem("perRow", noPerRow);
+            localStorage.setItem("Chairses",JSON.stringify(chairses) );
+
+
+
+        }
+        book = (b) => {}
+        var con = `booked by <br> Adekunle`;
+        console.log(con);
+        mark.innerHTML = con;
+    </script>
+</body>
+
+</html>

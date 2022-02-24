@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="registration-form.css">
+    <title>Login</title>
+
+    <style>
+        body {
+            background-image: url(/images/Cinemas-featured-image.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100vh;
+            margin-top: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <form style="width: 400px;">
+        <h3 align="center">LOGIN</h3>
+
+        <label for="">Email Address</label><br>
+        <div class="input">
+            <input type="email" name="" id="loginEmail" placeholder="Enter your email">
+        </div><br>
+
+        <label for="">Password</label><br>
+        <div class="input">
+            <input type="password" id="loginPassword" placeholder="Enter your password">
+        </div><br>
+
+        <div class="input">
+            <button onclick="login(event)"><a href="" ></a> Submit</button>
+        </div>
+
+        <div class="terms">
+            <span>Not have an account? <a href="registration-form.html">Sign Up Here</a></span>
+        </div>
+
+        <div id="logger"></div>
+    </form>
+</body>
+<script src="registration.js"></script>
+
+</html>
