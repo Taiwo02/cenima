@@ -62,6 +62,7 @@ function login(event) {
         console.log(currentUser);
         if (currentUser) {
             nam = `${currentUser.SURNAME} ${currentUser.FIRST_NAME}, you're highly welcome to Steven Cinema`;
+            localStorage.login = currentUser.ID;
             localStorage.setItem("myName", JSON.stringify(nam))
             window.open(" http://127.0.0.1:5502/customer/page1.html");
             return
